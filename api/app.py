@@ -112,7 +112,7 @@ def Create_V1_Badge(name):
     return Response(SVG, mimetype='image/svg+xml'), 200
 
 
-@app.route("/v1/mini/<string:name>", methods=['GET'])
+@app.route("/mini/<string:name>", methods=['GET'])
 def Create_V1_Mini_Badge(name):
     URL = f'https://solved.ac/api/v3/user/show?handle={name}'
 
