@@ -26,6 +26,25 @@
 
 ![Mini Preview](https://github.com/DM-09/AC-Arena-Badge/assets/112751504/b1da4eee-1452-43ca-b389-66245ca2a54c)
 
+## Expansion
+<img src="https://ac-arena.vercel.app/ex/dongmin&2" /> <br>
+<img src="https://ac-arena.vercel.app/ex/mini/dongmin" /> <br>
+
+기존 mazassumnida 와 Arena Badge를 동시에 볼 수 있습니다.
+- 10초 마다 바뀝니다.
+
+### Use
+- Mini <br>
+
+      <img src="https://ac-arena.vercel.app/ex/mini/{user name}" />
+- V1 <br>
+
+      <img src="https://ac-arena.vercel.app/mini/{user name}&{mazassumnida type}" />
+mazassumnida Type:
+- 0: Pastel
+- 1: V1
+- 2: V2
+
 
 ## Special Thanks To
 
