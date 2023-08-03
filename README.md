@@ -15,7 +15,8 @@
 
 <br>
 
-![V1 preview](https://github.com/DM-09/Test/assets/112751504/9744f43e-3f97-4a11-b444-af5cd7a396b2)
+![V1 Preview](https://github.com/DM-09/AC-Arena-Badge/assets/112751504/621d2f6f-9794-4e49-81b4-349c5a9e1903)
+
 
 ## Mini
 ### Use
@@ -23,7 +24,8 @@
 
 <br>
 
-![Mini preview](https://github.com/DM-09/Test/assets/112751504/15023cb2-0824-41ad-83d6-ad8ce791b1fc)
+![Mini Preview](https://github.com/DM-09/AC-Arena-Badge/assets/112751504/b1da4eee-1452-43ca-b389-66245ca2a54c)
+
 
 ## Special Thanks To
 
