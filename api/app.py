@@ -152,3 +152,84 @@ def Create_V1_Mini_Badge(name):
     except:
         return Response('Error', 404)
     return Response(SVG, mimetype='image/svg+xml'), 200
+<<<<<<< HEAD
+=======
+
+
+@app.route("/ex/<string:request>", methods=['GET'])
+def Create_Ex_V1(request):
+    box = str(request).split('&')
+
+    if len(box) < 2:
+        return Response('Error(missing parameters)', 404)
+
+    name, Maza_ver = box[0], box[1]
+
+    if Maza_ver.isdigit():
+        if int(Maza_ver) > 2:
+            return Response('Error(missing parameters)', 404)
+    else: return Response('Error(missing parameters)', 404)
+
+    maza_urls = [f'http://mazassumnida.wtf/api/pastel/generate_badge?boj={name}',
+                 f'https://mazassumnida.wtf/api/generate_badge?boj={name}',
+                 f'http://mazassumnida.wtf/api/v2/generate_badge?boj={name}']
+
+    SVG = '''<svg xmlns="http://www.w3.org/2000/svg" width="350" height="170">
+  <rect width="350" height="170" rx="15" ry="15"/>
+  <style>
+    .ani {{animation: ani 20s infinite}}
+
+
+    @keyframes ani {{
+      0% {{
+        opacity:1;
+      }}
+      10% {{
+        opacity:0;
+      }}
+      50% {{
+        opacity:0;
+      }}
+      60% {{
+      opacity:1;
+      }}
+    }}
+  </style>
+  <image href='{maza}'></image>
+  <image href='https://ac-arena.vercel.app/v1/{boj}' class="ani"></image>
+</svg>'''.format(maza=maza_urls[int(Maza_ver)], boj=name)
+
+    return Response(SVG, mimetype='image/svg+xml'), 200
+
+@app.route("/ex/mini/<string:name>", methods=['GET'])
+def Create_Ex_Mini(name):
+    maza = f'http://mazassumnida.wtf/api/mini/generate_badge?boj={name}'
+    arena = f'https://ac-arena.vercel.app/mini/{name}'
+
+    SVG = '''<svg xmlns="http://www.w3.org/2000/svg" width="110" height="20">
+  <rect width="110" height="20" rx="4" ry="4"/>
+  <style>
+    .ani {{animation: ani 20s infinite}}
+
+
+    @keyframes ani {{
+      0% {{
+        opacity:1;
+      }}
+      10% {{
+        opacity:0;
+      }}
+      50% {{
+        opacity:0;
+      }}
+      60% {{
+        opacity:1;
+      }}
+    }}
+  </style>
+  <image href='{m}'></image>
+  <image href='{a}' class="ani"></image>
+</svg>'''.format(m=maza, a=arena)
+
+    return Response(SVG, mimetype='image/svg+xml'), 200
+>>>>>>> f207b1a (Add Expansion)
