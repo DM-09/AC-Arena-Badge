@@ -152,8 +152,6 @@ def Create_V1_Mini_Badge(name):
     except:
         return Response('Error', 404)
     return Response(SVG, mimetype='image/svg+xml'), 200
-<<<<<<< HEAD
-=======
 
 
 @app.route("/ex/<string:request>", methods=['GET'])
@@ -232,4 +230,3 @@ def Create_Ex_Mini(name):
 </svg>'''.format(m=maza, a=arena)
 
     return Response(SVG, mimetype='image/svg+xml'), 200
->>>>>>> f207b1a (Add Expansion)
