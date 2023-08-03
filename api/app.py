@@ -172,6 +172,9 @@ def Create_Ex_V1(request):
                  f'https://mazassumnida.wtf/api/generate_badge?boj={name}',
                  f'http://mazassumnida.wtf/api/v2/generate_badge?boj={name}']
 
+    maza_svg = req.get(maza_urls[int(Maza_ver)]).text
+    arena_svg = req.get(f'https://ac-arena.vercel.app/v1/{name}').text
+
     SVG = '''<svg xmlns="http://www.w3.org/2000/svg" width="350" height="170">
   <rect width="350" height="170" rx="15" ry="15"/>
   <style>
@@ -193,9 +196,9 @@ def Create_Ex_V1(request):
       }}
     }}
   </style>
-  <image href='{maza}'></image>
-  <image href='https://ac-arena.vercel.app/v1/{boj}' class="ani"></image>
-</svg>'''.format(maza=maza_urls[int(Maza_ver)], boj=name)
+  <g>{m}</g>
+  <g class="ani">{a}</a>
+</svg>'''.format(m=maza_svg, a=arena_svg)
 
     return Response(SVG, mimetype='image/svg+xml'), 200
 
@@ -203,6 +206,9 @@ def Create_Ex_V1(request):
 def Create_Ex_Mini(name):
     maza = f'http://mazassumnida.wtf/api/mini/generate_badge?boj={name}'
     arena = f'https://ac-arena.vercel.app/mini/{name}'
+
+    maza_svg = req.get(maza).text
+    arena_svg = req.get(arena).text
 
     SVG = '''<svg xmlns="http://www.w3.org/2000/svg" width="110" height="20">
   <rect width="110" height="20" rx="4" ry="4"/>
@@ -225,8 +231,8 @@ def Create_Ex_Mini(name):
       }}
     }}
   </style>
-  <image href='{m}'></image>
-  <image href='{a}' class="ani"></image>
-</svg>'''.format(m=maza, a=arena)
+  <g>{m}</g>
+  <g class="ani">{a}</a>
+</svg>'''.format(m=maza_svg, a=arena_svg)
 
     return Response(SVG, mimetype='image/svg+xml'), 200
