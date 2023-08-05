@@ -7,6 +7,7 @@
 
 - 30분 간격으로 업데이트 됩니다.
 - `Ctrl + Shift + R`을 누르면 다시 로드 됩니다.(에니메이션 재생됨)
+- 문의(개선할 점 등)은 <a href='https://github.com/DM-09/AC-Arena-Badge/issues'>여기</a>에서
 
 
 ## V1
