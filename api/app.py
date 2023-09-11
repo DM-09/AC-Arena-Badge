@@ -48,7 +48,9 @@ def Create_V1_Badge(name):
 
         MyTier = data[0]
         Rating = data[1]
-        percent = int((Rating / end[MyTier] if end[MyTier] != 0 else 1) * 100)
+
+        percent = int(((Rating - end[MyTier - 1]) / (end[MyTier] - end[MyTier - 1]) if end[MyTier] != 0 else 1) * 100)
+        print(percent)
         if percent >= 100: percent = 100
         if MyTier != 13: Tier_X_decorate = ''
 
@@ -236,3 +238,6 @@ def Create_Ex_Mini(name):
 </svg>'''.format(m=maza_svg, a=arena_svg)
 
     return Response(SVG, mimetype='image/svg+xml'), 200
+
+
+app.run()
