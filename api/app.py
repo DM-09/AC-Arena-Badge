@@ -238,6 +238,3 @@ def Create_Ex_Mini(name):
 </svg>'''.format(m=maza_svg, a=arena_svg)
 
     return Response(SVG, mimetype='image/svg+xml'), 200
-
-
-app.run()
